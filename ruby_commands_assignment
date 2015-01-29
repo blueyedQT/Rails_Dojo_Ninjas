@@ -1,0 +1,37 @@
+1. Start a new project
+	
+	rails new dojo_ninjas
+	bundle install
+	rails s
+	rails c
+
+2. Create models/tables
+
+	rails g model Dojo name:string city:string state:string
+	rake db:migrate
+	rails g model Ninja dojo:references first_name:string last_name:string
+	rake db:migrate
+
+3. Create some entries into the Dojo table
+
+	Dojo.create(name:"Seattle")
+	Dojo.create(name:"Testing")
+	Dojo.create(city:"Bellevue")
+
+4. Delete the three dojos you created
+
+	Dojo.find(1).destroy
+	Dojo.destroy_all
+
+5. Create 3 additional dojos
+
+	Dojo.new(name:"Coding Dojo Seattle", city:"Bellevue", state:"WA").save
+	ca = Dojo.new(name:"Coding Dojo Silicon Valley", city:"Mountain View", state:"CA")
+	ca.valid?
+	ca.save
+	ny = Dojo.new(city:"New York", state:"NYK")
+	ny.valid?
+	ny.errors.full_messages
+	Dojo.create(name:"Coding Dojo New York", city:"New York", state:"NY")
+
+6. Create 3 ninjas that belong to the first Dojo
