@@ -35,3 +35,22 @@
 	Dojo.create(name:"Coding Dojo New York", city:"New York", state:"NY")
 
 6. Create 3 ninjas that belong to the first Dojo
+
+	Ninja.create(dojo:Dojo.first, first_name:"Katrina", last_name:"Sanford")
+	...
+
+7. Create 3 more ninjas that belong to the second dojo
+
+	Ninja.create(dojo:Dojo.find(7), first_name:"Timothy", last_name:"Sanford")
+	...
+
+8. Create 3 more ninjas that belong to the third dojo created
+
+	Ninja.create(dojo:Dojo.last, first_name:"Meagan", last_name:"Gulli")
+	...
+
+9. Make sure you understand how to get all of the ninjas for any dojo
+
+	Dojo.first.ninjas.all
+	Dojo.find(7).ninjas.all
+	Dojo.last.ninjas.all
