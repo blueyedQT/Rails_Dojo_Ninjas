@@ -54,3 +54,14 @@
 	Dojo.first.ninjas.all
 	Dojo.find(7).ninjas.all
 	Dojo.last.ninjas.all
+
+10. Delete second dojo
+
+	Dojo.find(7).destroy
+
+11. How would you adjust the model to automatically remove all ninjas associated with it?
+
+	dependent: :destroy
+
+12.  How would you retrieve only the first_names of the ninja that belongs to the second dojo and order the result by created_at DESC?
+	Dojo.find(7).ninjas.select(:first_name).order(created_at: :desc)
